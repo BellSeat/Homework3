@@ -10,3 +10,7 @@ As a game program, there are also some extent states:
 
 
 ## 2.The various states that you must consider for your app, why you must consider it, and what must happen in each state.
+
+1. Foreground Active State: in this state, iOS would configure user UI and prepare to interact with user. The user profile and usersetting should be currect download and rendering in app. If there is not network or inaccurate user data, foreground should presnt error message till every data prepared
+
+2. Foreground Inactive: There are two ways to turning into foreground inactive, from unattached and from froground active. Even in diagram, first type forground inactive look like parallel to background state but it still waiting the response from background. If foreground active move into forground inactive, our game should suddenly update user current data to server with `.onDisappear`, and when user awake our game, the `.onAppear` will compare user local user setting data with server-side user data. If same, do nothing, else down user data. "Server first rule"
