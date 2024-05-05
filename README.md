@@ -11,6 +11,9 @@ As a game program, there are also some extent states:
 
 ## 2.The various states that you must consider for your app, why you must consider it, and what must happen in each state.
 
-1. Foreground Active State: in this state, iOS would configure user UI and prepare to interact with user. The user profile and usersetting should be currect download and rendering in app. If there is not network or inaccurate user data, foreground should presnt error message till every data prepared
+1. Foreground Active State: in this state, iOS would configure the user UI and prepare to interact with the user. The user profile and user settings should be correctly downloaded and rendered in the app. If there is not network or inaccurate user data, the foreground should presnt an error message till every data prepared
 
-2. Foreground Inactive: There are two ways to turning into foreground inactive, from unattached and from froground active. Even in diagram, first type forground inactive look like parallel to background state but it still waiting the response from background. If foreground active move into forground inactive, our game should suddenly update user current data to server with `.onDisappear`, and when user awake our game, the `.onAppear` will compare user local user setting data with server-side user data. If same, do nothing, else down user data. "Server first rule"
+2. Foreground Inactive: There are two ways to turn into foreground inactive, from unattached and from foreground active. Even in the diagram, the first type foreground inactive looks parallel to the background state but it still waiting for the response from the background. If the foreground active moves into the foreground were inactive, our game should suddenly update the user's current data to the server with `.onDisappear`, and when the user awakes our game, the `.onAppear` will compare the user's local user setting data with the server-side user data. If the same, do nothing, else down user data. "Server first rule"
+
+## 3. Code
+Please review the Homework3 first then check my previous [HW2](https://github.com/BellSeat/CSS533HW2) it also have state management 
